@@ -1,0 +1,15 @@
+class Solution:
+    def rotatedDigits(self, n: int) -> int:
+        count = 0
+        for num in range(1, n + 1):
+            valid = True
+            different = False
+            for digit in str(num):
+                if digit in '347':
+                    valid = False
+                    break
+                if digit in '2569':
+                    different = True
+            if valid and different:
+                count += 1
+        return count  
